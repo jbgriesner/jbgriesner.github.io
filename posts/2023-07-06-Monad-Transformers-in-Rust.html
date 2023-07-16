@@ -9,11 +9,23 @@
         <meta property="og:description" content="Home" />
 
         <title>jb-griesner.dev - Monad Transformers in Rust</title>
+        
+        <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
         <link rel="stylesheet" href="../css/default.css" />
+        <link rel="stylesheet" href="../css/syntax.css" />
     </head>
-    <body>        
+    <body>    
+             
       <div class="content">
-        <div class="header">
+        <div class="menu">
+          <a href="../">jb-griesner.dev</a>
+          <nav>
+            <!-- <a href="../">Home</a>
+            <span>|</span> -->
+            <a href="../about.html">About</a>
+          </nav>            
+        </div>
+        <div class="header">                
           <h1>Monad Transformers in Rust</h1>
         </div>
         <div class="postList">
@@ -26,7 +38,16 @@
 <p>I’m thrilled to finally embark on my blogging journey after a considerable period of contemplation.</p>
 <p>Within these digital pages, I aim to delve into the realms of functional programming, theoretical computer science and the exhilarating art of hacking, covering a wide range of subjects from system administration to development and software architecture.</p>
 <p>To avoid any misconceptions, allow me to clarify my definition of system administration. It does not entail the mere execution of the command</p>
-<pre><code>sudo apt-get install kde</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">zipped ::</span> <span class="dt">Applicative</span> f <span class="ot">=&gt;</span> f a <span class="ot">-&gt;</span> f b <span class="ot">-&gt;</span> f (a, b)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>zipped <span class="ot">=</span> liftA2 (,)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- An operator spelling, for convenience.</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ot">(&amp;*&amp;) ::</span> <span class="dt">Applicative</span> f <span class="ot">=&gt;</span> f a <span class="ot">-&gt;</span> f b <span class="ot">-&gt;</span> f (a, b)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>(<span class="op">&amp;*&amp;</span>) <span class="ot">=</span> zipped</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">infixr</span> <span class="dv">5</span> <span class="op">&amp;*&amp;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ot">unit ::</span> <span class="dt">Applicative</span> f <span class="ot">=&gt;</span> f ()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>unit <span class="ot">=</span> <span class="fu">pure</span> ()</span></code></pre></div>
 <p>Instead, I am an avid enthusiast of source-based distributions, favoring tutorials and insights that revolve around the raw essence of software, rather than being specific to particular distributions.</p>
 <h1 id="special-thanks">Special Thanks</h1>
 <p>This blog is powered by <a href="https://jaspervdj.be/hakyll/">Hakyll</a>.</p>

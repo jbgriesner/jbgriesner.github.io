@@ -9,11 +9,23 @@
         <meta property="og:description" content="Home" />
 
         <title>jb-griesner.dev - Home sweet home</title>
+        
+        <link href="https://pvinis.github.io/iosevka-webfont/3.4.1/iosevka.css" rel="stylesheet" />
         <link rel="stylesheet" href="../css/default.css" />
+        <link rel="stylesheet" href="../css/syntax.css" />
     </head>
-    <body>        
+    <body>    
+             
       <div class="content">
-        <div class="header">
+        <div class="menu">
+          <a href="../">jb-griesner.dev</a>
+          <nav>
+            <!-- <a href="../">Home</a>
+            <span>|</span> -->
+            <a href="../about.html">About</a>
+          </nav>            
+        </div>
+        <div class="header">                
           <h1>Home sweet home</h1>
         </div>
         <div class="postList">
@@ -26,7 +38,8 @@
 <p>I’m thrilled to finally embark on my blogging journey after a considerable period of contemplation.</p>
 <p>Within these digital pages, I aim to delve into the realms of functional programming, theoretical computer science and the exhilarating art of hacking, covering a wide range of subjects from system administration to development and software architecture.</p>
 <p>To avoid any misconceptions, allow me to clarify my definition of system administration. It does not entail the mere execution of the command</p>
-<pre><code>sudo apt-get install kde</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">printHello ::</span> <span class="dt">IO</span> ()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>printHello <span class="ot">=</span> <span class="fu">putStrLn</span> <span class="st">&quot;Hello, World&quot;</span></span></code></pre></div>
 <p>Instead, I am an avid enthusiast of source-based distributions, favoring tutorials and insights that revolve around the raw essence of software, rather than being specific to particular distributions.</p>
 <h1 id="special-thanks">Special Thanks</h1>
 <p>This blog is powered by <a href="https://jaspervdj.be/hakyll/">Hakyll</a>.</p>
